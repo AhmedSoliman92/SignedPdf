@@ -1,0 +1,26 @@
+package signedPdf;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
+
+import org.junit.jupiter.api.Test;
+
+class SignedPdfTest {
+
+	@Test
+	void testSignedPdf() {
+		
+		assertEquals("PDF saved to the location !!!",SignedPdf.signedPdf("ahmed", "WFH", "Sample Signature test","../signature.pdf"));
+	}
+	@Test
+	void testSignedPdf_Exception() {
+		try {
+			SignedPdf.signedPdf("ahmed", "WFH", "Sample Signature test","../signature1.pdf");
+		}catch(IOException e) {
+			assertEquals("PDF saved to the location !!!","Error while saving pdf " + e.getMessage());
+		}
+		
+		
+	}
+}

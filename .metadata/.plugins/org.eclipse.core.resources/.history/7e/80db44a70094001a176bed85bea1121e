@@ -1,0 +1,39 @@
+package signedPdf;
+
+import java.io.IOException;
+import java.util.Calendar;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
+
+import com.java4less.pdf.signature.PDFSignatureFacade;
+
+public class SignedPdf {
+	public static void main(String args[]) { 
+		PDDocument pdDocument = new PDDocument();
+		PDPage pdPage = new PDPage();
+		pdDocument.addPage(pdPage);
+		try {
+ 
+			PDSignature PDfSignature = new PDSignature();
+			PDfSignature.setFilter(PDSignature.FILTER_VERISIGN_PPKVS);
+			PDfSignature.setSubFilter(PDSignature.SUBFILTER_ADBE_PKCS7_SHA1);
+			PDfSignature.setName("Ahmed Soliman");
+			PDfSignature.setLocation("WFH");
+			PDfSignature.setReason("Sample Signature test");
+			PDfSignature.setSignDate(Calendar.getInstance());
+			pdDocument.addSignature(PDfSignature);
+			
+			pdDocument.save("C:\\Kscodes\\pdf\\signature-sample.pdf");
+			pdDocument.close();
+			System.out.println("PDF saved to the location !!!");
+			PDFSignatureFacade facade = new PDFSignatureFacade();
+			facade.sign("certs/j4l_test.p12","test","signature-sample.pdf","signedreport.pdf");
+		} catch (IOException ioe) {
+			System.out.println("Error while saving pdf" + ioe.getMessage());
+		}
+ 
+	}
+
+}

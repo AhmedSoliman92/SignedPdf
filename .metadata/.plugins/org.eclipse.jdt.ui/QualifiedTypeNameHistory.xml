@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDDocument"/>
+<fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDPage"/>
+<fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.java4less.pdf.signature.PDFSignatureFacade"/>
+</qualifiedTypeNameHistroy>

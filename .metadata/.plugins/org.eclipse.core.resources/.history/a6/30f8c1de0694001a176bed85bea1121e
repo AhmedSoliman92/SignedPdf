@@ -1,0 +1,15 @@
+package signedPdf;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SignedPdfTest {
+
+	@Test
+	void test() {
+		
+		assertEquals("PDF saved to the locddation !!!",SignedPdf.signedPdf("ahmed", "WFH", "Sample Signature test"));
+	}
+
+}
